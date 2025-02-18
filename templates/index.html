@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div>
+    <body class="ppimage" style="height: 100vh;">
+</div>
+
+</div>
+<div class="container" align=center style="margin-top: 310px;">
+    <h1 class="text-white">Welcome!</h1>
+    <div class="opacity-50">
+        <p class="text-white">Log in/Register to see your To Do's.</p>
+    </div>
+</div>
+<div class="container" align=center style="margin-top: 40px;">
+    <form id="auth-form" action="{{url_for('login')}}" method="post">
+        <input
+            type="text"
+            name="username"
+            placeholder="username"
+            class="input-field"
+        />
+        <input
+            type="password"
+            name="password"
+            placeholder="password"
+            class="input-field"
+        />
+        <input
+            type="submit"
+            value="Login"
+            class="btn btn-primary"
+            onclick="setActionForm('login')"
+        />
+        <input
+            type="button"
+            value="Register"
+            class="btn btn-outline-secondary"
+            onclick="setActionForm('register')"
+        />
+
+    </form>
+</div>
+
+<script>
+    function setActionForm(action) {
+        let form = document.getElementById('auth-form');
+        if (action === 'login') {
+            form.action = "{{url_for('login')}}";
+            form.method = 'post';
+            form.submit();
+        } else if (action === "register") {
+            form.action = "{{url_for('register')}}";
+            form.method = 'post';
+            form.submit();
+        }
+    }
+</script>
+
+{% endblock %}

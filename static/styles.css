@@ -1,0 +1,10 @@
+
+
+  .ppimage {
+    background-image: url(/static/peter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /*  full viewport height */
+    width: 100%;
+  }
+
